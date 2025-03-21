@@ -31,6 +31,9 @@ En este escenario, implementarás la solución SIEM SOAR basada en Microsoft Sen
 
 ## Parte 2: Implementar la solución (opcional)
 
+> [!NOTE]
+> Para esta parte del laboratorio, la tarea para crear un panel con vistas personalizadas para incidentes y sus alertas (tarea 4 de este ejercicio) no es funcional, ya que no hay datos sobre los que realizar esta tarea. Los pasos de la tarea 4 se incluyen únicamente con fines informativos. La ejecución de los pasos no devolverá ningún dato.
+
 ### Tarea 1: Crear área de trabajo de Log Analytics
 
 En esta tarea, crearás un área de trabajo de Log Analytics que es necesaria para alojar todos los datos que Microsoft Sentinel va a ingerir y usar para sus detecciones y análisis.
@@ -43,7 +46,7 @@ En esta tarea, crearás un área de trabajo de Log Analytics que es necesaria pa
 6. Selecciona **Crear un recurso** y busca **área de trabajo de Log Analytics**
 7. Busca el icono **Área de trabajo de Log Analytics** y selecciona **Crear**.
 8. En el sitio Crear área de trabajo de Log Analytics, crea un nuevo **Grupo de recursos** y asígnale el nombre **`rg_eastus_soc`**.
-9. En Detalles de la instancia, escribe el nombre **`law-sentinel`**, selecciona **Este de EE. UU.** para región.
+9. En Detalles de la instancia, escribe el nombre **`law-sentinel`**, selecciona **Este de EE. UU** para la región.
 10. Selecciona **Revisar y crear**
 11. Seleccione **Crear** para iniciar la implementación.
 
@@ -58,14 +61,9 @@ En esta tarea, agregarás Sentinel al área de trabajo de Log Analytics creada y
 1. En la página **Microsoft Sentinel**, selecciona **Crear**.
 1. En la **página Agregar Microsoft Sentinel a un área de trabajo**, debe aparecer el área de trabajo de Log Analytics creada anteriormente.  Selecciona **law-sentinel** y, a continuación, selecciona **Agregar**.
 1. Se puede tardar unos minutos en agregar Sentinel al área de trabajo.  Una vez agregada la nueva área de trabajo, se mostrará la página **Microsoft Sentinel | Noticias y guías**.  Se te notifica que se activa la versión de prueba gratuita de Microsoft Sentinel.  Seleccione **Aceptar**.
-1. En el centro de la página, selecciona **Ir al centro de contenido**.  En el panel de navegación izquierdo, expande **Gestión de contenidos** y, luego, selecciona **Centro de contenidos**.
-1. En el centro de contenido, instalarás el **Laboratorio de entrenamiento de Microsoft Sentinel**.  Para encontrar esta solución, filtre por **Provider = Microsoft** y **Category = Training and Tutorials**. Una vez establecidos y aplicados estos filtros, se mostrará el **Laboratorio de entrenamiento de Microsoft Sentinel**. Selecciónalo en los resultados de búsqueda e **Instala** la solución.
-1. Seleccione **Crear**.
-1. Elige el grupo de recursos **rg_eastus_soc** y el área de trabajo **law-sentinel**.
-1. Selecciona **Revisar + crear** y, luego, **Crear**.
-1. Espera hasta que la solución admitida se instale correctamente.
+1. En el centro de la página, selecciona **Ir al centro de contenido**.  El centro de contenido es donde vas a descargar soluciones. Explora el centro de contenido, a voluntad.
 
-Has implementado correctamente Sentinel en el área de trabajo de Log Analytics y has agregado datos. 
+Has implementado correctamente Sentinel en el área de trabajo de Log Analytics. 
 
 ### Tarea 3: Configurar RBAC
 
@@ -91,7 +89,7 @@ Además, el equipo de red necesita acceso a los registros del paraguas de Cisco.
 1. Busca **`Microsoft Sentinel Responder`** y selecciona **Ver** en la columna Detalles.
 1. Revisa los permisos que coincidan con los requisitos.
 1. Cierra la ventana con **X** en la esquina superior derecha.
-1. Seleccione **Siguiente**.
+1. Selecciona **Siguiente**.
 1. Elija **+ Seleccionar miembros**.
 1. **`SOC Analysts`** Busca Grupo, selecciona **Analistas de SOC** en los resultados de la búsqueda, presiona **Seleccionar** y agrega la asignación de roles.
 1. Seleccione **Revisar y asignar**.
@@ -138,6 +136,9 @@ Además, el equipo de red necesita acceso a los registros del paraguas de Cisco.
 Has creado correctamente el modelo de acceso basado en roles para los requisitos de rol del equipo de operaciones de seguridad de Contoso y has creado un rol personalizado para el equipo de red y has asignado el rol en la tabla específica del área de trabajo de Log Analytics.
 
 ### Tarea 4: Crear libro
+
+> [!NOTE]
+> Estos pasos se incluyen únicamente con fines informativos. La ejecución de los pasos no devolverá ningún dato.
 
 En esta tarea, crearás un libro para obtener un panel con vistas personalizadas e incidentes actuales y sus alertas.
 
