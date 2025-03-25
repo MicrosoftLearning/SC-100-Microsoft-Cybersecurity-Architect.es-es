@@ -54,7 +54,7 @@ Has creado correctamente el área de trabajo de Log Analytics para la implementa
 
 ### Tarea 2: Creación de Sentinel
 
-En esta tarea, agregarás Sentinel al área de trabajo de Log Analytics creada y agregarás registros de demostración, ya que el inquilino de demostración no tiene datos existentes en el área de trabajo de Log Analytics, importarás los registros de demostración para tener una mejor idea de cómo funciona Sentinel.
+En esta tarea, añadirás Sentinel al área de trabajo de Log Analytics creada.
 
 1. Todavía debes iniciar sesión en Azure Portal **https://portal.azure.com**.
 1. En la barra de búsqueda, en el banner azul de la parte superior de la página, escribe **Microsoft Sentinel** y selecciónalo en los resultados de búsqueda que aparecen en los servicios.
@@ -68,17 +68,14 @@ Has implementado correctamente Sentinel en el área de trabajo de Log Analytics.
 ### Tarea 3: Configurar RBAC
 
 Tienes que proteger el acceso en función de los privilegios mínimos, y crearás asignaciones de roles para los requisitos de rol específicos. En la próxima implementación productiva, habrá dos roles diferentes en el Centro de operaciones de seguridad.
-Además, el equipo de red necesita acceso a los registros del paraguas de Cisco. Debes asegurarte de que el equipo de red solo puede acceder a estos registros.
+
 
 #### Requisitos de permisos de
 
 | Rol | Permisos |
 |---|---|
-| Analista de seguridad | Ver datos, incidentes, libros y otros recursos de Sentinel |
-| | Asignar o descartar incidentes |
-| Ingeniero de seguridad | Creación y edición de libros y reglas de análisis |
-| | Instala y actualiza las soluciones desde el centro de contenido |
-| Equipo de red | Permisos de lectura para grupo: **NOC** en la tabla: **Cisco_Umbrella_dns_CL**|
+| Analista de seguridad | Ver datos, incidentes, libros y otros recursos de Sentinel y Asignar/descartar incidentes. |
+| Ingeniero de seguridad | Crear y editar libros y reglas de análisis Instalar y actualizar soluciones desde el centro de contenido |
 
 ---
 
@@ -100,40 +97,8 @@ Además, el equipo de red necesita acceso a los registros del paraguas de Cisco.
 1. En la hoja **Seleccionar miembros**, busca el grupo **Ingenieros de SOC**.  En los resultados de la búsqueda, selecciona **Ingenieros de SOC**, presiona **Seleccionar** para agregar la asignación de roles.
 1. Seleccione **Revisar y asignar** dos veces.
 1. Selecciona la **pestaña Asignaciones de roles** y Confirma que se han establecido las asignaciones de roles.
-1. Ahora agregarás un rol personalizado. Selecciona **Agregar**, en el elemento desplegable, y selecciona **Agregar rol personalizado**.
-1. Asígnale el nombre **`NOC-CiscoUmbrellaCL-Read`**.
-1. Para **Permiso de línea base**, selecciona **Empezar de cero**.
-1. Seleccione **Siguiente**.
-1. En la pestaña **Permisos**, selecciona **Agregar permisos**.
-1. Busca **`Microsoft.OperationalInsights`** y selecciona la tarjeta **Azure Log Analytics**.
-1. Agrega los permisos siguientes.
-    - Microsoft.OperationalInsights/workspaces
-        - Lectura: Obtener área de trabajo
-        - Otros: Buscar datos del área de trabajo
 
-    - Microsoft.OperationalInsights/workspaces/analytics
-        - Otros : Buscar
-
-    - Microsoft.OperationalInsights/workspaces/query
-        - Lectura: Consultar datos en el área de trabajo
-
-    - Microsoft.OperationalInsights/workspaces/tables/query
-        - Lectura: Consultar datos de tabla del área de trabajo
-
-1. Seleccione **Revisar + crear**.
-1. Selecciona **Crear** y, después, selecciona **Aceptar**.
-1. En la barra de búsqueda superior, busca **`Resource groups`** y selecciona **rg_eastus_soc**.
-1. Abre el área de trabajo de Log Analytics **law-sentinel**.
-1. En el panel de navegación izquierdo, expande **Configuración** y selecciona **Tablas**.
-1. Busque **`Cisco_Umbrella_dns_CL`**.
-1. Haz clic en los puntos suspensivos (...), selecciona **Control de acceso (IAM)**.
-1. Seleccione **Agregar** > **Agregar asignación de roles**.
-1. Busca **`NOC-CiscoUmbrellaCL-Read`** y selecciona el rol personalizado.
-1. Seleccione **Siguiente**.
-1. Selecciona **Seleccionar miembros**, busca **NOC**, selecciónalo en los resultados de la búsqueda y presiona **Seleccionar**
-1. Seleccione **Revisar y asignar** dos veces.
-
-Has creado correctamente el modelo de acceso basado en roles para los requisitos de rol del equipo de operaciones de seguridad de Contoso y has creado un rol personalizado para el equipo de red y has asignado el rol en la tabla específica del área de trabajo de Log Analytics.
+Has creado correctamente el modelo de acceso basado en roles para los requisitos de rol del equipo de operaciones de seguridad de Contoso.
 
 ### Tarea 4: Crear libro
 
