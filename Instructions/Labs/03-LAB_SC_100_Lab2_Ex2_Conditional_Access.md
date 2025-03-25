@@ -34,12 +34,9 @@ En esta tarea, crearás una ubicación con nombre mediante la dirección IP exte
 
 1. Inicia sesión en la máquina virtual cliente 1 (LON-Sc1) como cuenta **lon-sc1\admin** . El proveedor de hospedaje del laboratorio debe proporcionar la contraseña.
 1. Abre una ventana de **PowerShell**. Para ello, selecciona el menú Inicio con el botón derecho del ratón y luego selecciona **Terminal**.
-1. Escribe el siguiente cmdlet para comprobar tu dirección IP externa actual:
-    ```powershell
-    curl ifconfig.me | Select-String -Pattern '.'
-    ```
+1. Escribe el siguiente cmdlet para comprobar tu dirección IP externa actual: `Invoke-RestMethod -Uri "http://ifconfig.me/ip"`
 1. Anota la dirección IP de PowerShell devuelta.
-1. Abre **Microsoft Edge**, selecciona la barra de direcciones, ve a **`https://entra.microsoft.com`** e inicia sesión en el portal de Entra ID como **Administrador MOD**admin@WWLxZZZZZZ.onmicrosoft.com (donde ZZZZZZ es tu identificador de inquilino único proporcionado por el proveedor de hospedaje del laboratorio). La contraseña de administrador te la debería haber proporcionado tu proveedor de servicios de hospedaje de laboratorio.
+1. Abre **Microsoft Edge**, selecciona la barra de direcciones, ve a **`https://entra.microsoft.com`** e inicia sesión en el portal de Entra ID como **administrador de MOD**admin@WWLxZZZZZZ.onmicrosoft.com (donde ZZZZZZ es tu identificador de inquilino único proporcionado por el proveedor de hospedaje del laboratorio). La contraseña de administrador te la debería haber proporcionado tu proveedor de servicios de hospedaje de laboratorio.
 1. Si se te pide que configures la autenticación multifactor, sigue las instrucciones.
 1. En el cuadro de diálogo ¿Mantener la sesión iniciada?, activa la casilla **No volver a mostrar esto** y, a continuación, selecciona **No**.
 1. Cierra el cuadro de diálogo Guardar contraseña. Para ello, selecciona **No ahora** para no guardar las credenciales predeterminadas del administrador global en el explorador.
@@ -84,7 +81,7 @@ Puesto que has creado una directiva de acceso condicional que limita el acceso a
 >[! ALERT] Esta tarea se abrevia significativamente con fines ilustrativos.
 En un escenario real, haría un período de prueba más largo con un grupo más grande y representativo para asegurarse de que ningún incidente imprevisible distorsiona el resultado.
 
-1. Abre una nueva ventana **InPrivate** en el navegador **Microsoft Edge**. Para ello, selecciona el icono de barra de tareas con el botón derecho del ratón y luego selecciona **Nueva ventana InPrivate**.
+1. Abre una nueva ventana **InPrivate** en el navegador **Microsoft Edge**. Para ello, selecciona el icono de barra de tareas con el botón derecho del mouse y luego selecciona **Nueva ventana InPrivate**.
 1. Selecciona la barra de direcciones, ve a **`https://portal.microsoft.com`** e inicia sesión en el portal de M365 como **Allan Deyoung**alland@WWLxZZZZZZ.onmicrosoft.com (donde ZZZZZZ es el identificador de inquilino único proporcionado por el proveedor de hospedaje del laboratorio). El proveedor de hospedaje del laboratorio debe proporcionar la contraseña del usuario.
 1. En el cuadro de diálogo ¿Mantener la sesión iniciada?, activa la casilla **No volver a mostrar esto** y, a continuación, selecciona **No**.
 1. Dado que el inicio de sesión se realizó correctamente, puedes cerrar la ventana **InPrivate**.
